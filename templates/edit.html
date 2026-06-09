@@ -1,0 +1,15 @@
+{% extends 'fees/base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm p-4">
+            <h4 class="mb-3 text-warning">Modify Profile Entry</h4>
+            <form method="POST" onsubmit="return validateForm();">
+                {% csrf_token %}
+                {% for field in form %}<div class="mb-3"><label class="form-label">{{ field.label }}</label>{{ field }}</div>{% endfor %}
+                <button type="submit" class="btn btn-dark w-100">Apply System Changes</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
